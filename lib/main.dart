@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veggies_notes/pages/home_page.dart';
 import "constant/color_scheme.dart";
 
 void main() {
@@ -11,15 +12,12 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: darkColorScheme,
       ),
-      home: const Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: const HomePage(),
     );
   }
 }
