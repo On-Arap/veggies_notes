@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:veggies_notes/pages/home_page.dart';
+import 'package:veggies_notes/home.dart';
 import "constant/color_scheme.dart";
 
 void main() {
