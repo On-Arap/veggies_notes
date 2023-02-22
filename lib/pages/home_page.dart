@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../component/card_recipe.dart';
 import '../constant/destinations.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,8 +13,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Home Page"),
+    return Center(
+      child: CardRecipe(
+        title: "Tartiflette vegetarienne",
+        image: Image.network("https://i0.wp.com/freethepickle.fr/wp-content/uploads/2021/09/Tartiflettes-lardons-de-champignons-2-of-6.jpg?resize=800%2C1000&ssl=1"),
+      ),
     );
   }
 }
