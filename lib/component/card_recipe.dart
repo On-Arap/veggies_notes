@@ -46,7 +46,7 @@ class CardRecipe extends StatelessWidget {
             height: 150,
             decoration: BoxDecoration(
               color: Colors.black,
-              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15)),
+              borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15)),
               image: DecorationImage(
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.2),
