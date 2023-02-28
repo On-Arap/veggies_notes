@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:veggies_notes/constant/destinations.dart';
+import 'package:veggies_notes/pages/recipe_page.dart';
 import '../pages/explore_page.dart';
 import '../pages/home_page.dart';
 import '../pages/map_page.dart';
@@ -47,6 +48,15 @@ class _DestinationViewState extends State<DestinationView> {
                     default:
                       return ProfilPage(destination: widget.destination);
                   }
+                }
+              case '/recipe':
+                {
+                  final data = settings.arguments as Map<String, dynamic>;
+                  return RecipePage(
+                    destination: widget.destination,
+                    title: data['title'],
+                    imageUrl: data['imageUrl'],
+                  );
                 }
               case '/text':
                 return TextPage(destination: widget.destination);

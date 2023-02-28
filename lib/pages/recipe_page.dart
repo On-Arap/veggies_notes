@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
+import '../constant/destinations.dart';
 
-class RecipePage extends StatelessWidget {
+class RecipeData {
   String title;
   String imageUrl;
 
-  RecipePage({super.key, required this.title, required this.imageUrl});
+  RecipeData({required this.title, required this.imageUrl});
+}
+
+class RecipePage extends StatelessWidget {
+  final Destination destination;
+  final String title;
+  final String imageUrl;
+
+  const RecipePage({super.key, required this.destination, required this.title, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +24,9 @@ class RecipePage extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            height: 150,
+            height: 500,
             decoration: BoxDecoration(
               color: Colors.black,
-              borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15)),
               image: DecorationImage(
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.2),
