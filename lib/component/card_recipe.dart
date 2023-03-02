@@ -3,8 +3,28 @@ import 'package:flutter/material.dart';
 class CardRecipe extends StatelessWidget {
   String title;
   String imageUrl;
+  String timer;
+  String difficulty;
 
-  CardRecipe({super.key, required this.title, required this.imageUrl});
+  CardRecipe({super.key, required this.title, required this.imageUrl, required this.timer, required this.difficulty});
+
+  Color getColorDifficulty() {
+    Color color = Colors.white;
+
+    switch (difficulty) {
+      case "easy":
+        color = Colors.green;
+        break;
+      case "medium":
+        color = Colors.orange;
+        break;
+      case "hard":
+        color = Colors.red;
+        break;
+      default:
+    }
+    return color;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,17 +89,17 @@ class CardRecipe extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
-                          children: const [
-                            Icon(Icons.timer),
+                          children: [
+                            const Icon(Icons.timer),
                             Text(
-                              "20min",
-                              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
+                              timer,
+                              style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
                             )
                           ],
                         ),
-                        const Text(
-                          "easy",
-                          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
+                        Text(
+                          difficulty,
+                          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500, color: getColorDifficulty()),
                         ),
                       ],
                     )
