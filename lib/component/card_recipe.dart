@@ -53,11 +53,37 @@ class CardRecipe extends StatelessWidget {
                 borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15)),
                 image: DecorationImage(
                   colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.2),
+                    Colors.black.withOpacity(0.4),
                     BlendMode.multiply,
                   ),
                   image: NetworkImage(imageUrl),
                   fit: BoxFit.cover,
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Column(
+                  children: [
+                    const Expanded(child: SizedBox()),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: const [
+                            Icon(Icons.timer),
+                            Text(
+                              "20min",
+                              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
+                            )
+                          ],
+                        ),
+                        const Text(
+                          "easy",
+                          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ),
             )
