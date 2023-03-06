@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 
 class CardRecipe extends StatelessWidget {
   String title;
@@ -90,16 +91,25 @@ class CardRecipe extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            const Icon(Icons.timer),
+                            const Icon(LineIcons.hourglass),
                             Text(
                               timer,
                               style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
                             )
                           ],
                         ),
-                        Text(
-                          difficulty,
-                          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500, color: getColorDifficulty()),
+                        Row(
+                          children: [
+                            Text(
+                              difficulty,
+                              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500, color: getColorDifficulty()),
+                            ),
+                            Icon(
+                              LineIcons.rocket,
+                              size: 20.0,
+                              color: getColorDifficulty(),
+                            ),
+                          ],
                         ),
                       ],
                     )
