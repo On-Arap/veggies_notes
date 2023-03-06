@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veggies_notes/component/recipe_icon.dart';
 import '../constant/destinations.dart';
 
 class RecipeData {
@@ -56,71 +57,11 @@ class RecipePage extends StatelessWidget {
                 spacing: 0.0, // gap between adjacent chips
                 runSpacing: 10.0, // gap between lines
                 children: [
-                  Container(
-                    width: (MediaQuery.of(context).size.width / 2) - 16,
-                    child: Row(
-                      children: const [
-                        Icon(Icons.timer),
-                        SizedBox(width: 4.0),
-                        Text(
-                          "20min",
-                          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: (MediaQuery.of(context).size.width / 2) - 16,
-                    child: Row(
-                      children: const [
-                        Icon(Icons.difference),
-                        SizedBox(width: 4.0),
-                        Text(
-                          "easy",
-                          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: (MediaQuery.of(context).size.width / 2) - 16,
-                    child: Row(
-                      children: const [
-                        Icon(Icons.cut),
-                        SizedBox(width: 4.0),
-                        Text(
-                          "10min",
-                          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: (MediaQuery.of(context).size.width / 2) - 16,
-                    child: Row(
-                      children: const [
-                        Icon(Icons.terrain_outlined),
-                        SizedBox(width: 4.0),
-                        Text(
-                          "Veggie",
-                          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: (MediaQuery.of(context).size.width / 2) - 16,
-                    child: Row(
-                      children: const [
-                        Icon(Icons.fireplace),
-                        SizedBox(width: 4.0),
-                        Text(
-                          "10min",
-                          style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
-                        )
-                      ],
-                    ),
-                  ),
+                  RecipeIcon(icon: Icons.timer, text: "20min"),
+                  RecipeIcon(icon: Icons.difference, text: "easy"),
+                  RecipeIcon(icon: Icons.cut, text: "10min"),
+                  RecipeIcon(icon: Icons.terrain_outlined, text: "Veggie"),
+                  RecipeIcon(icon: Icons.fireplace, text: "10min"),
                 ],
               ),
             ),
