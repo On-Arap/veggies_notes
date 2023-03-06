@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:veggies_notes/component/recipe_icon.dart';
 import '../constant/destinations.dart';
+import 'package:line_icons/line_icons.dart';
 
 class RecipeData {
   String title;
@@ -57,11 +58,11 @@ class RecipePage extends StatelessWidget {
                 spacing: 0.0, // gap between adjacent chips
                 runSpacing: 10.0, // gap between lines
                 children: [
-                  RecipeIcon(icon: Icons.timer, text: "20min"),
-                  RecipeIcon(icon: Icons.difference, text: "easy"),
-                  RecipeIcon(icon: Icons.cut, text: "10min"),
-                  RecipeIcon(icon: Icons.terrain_outlined, text: "Veggie"),
-                  RecipeIcon(icon: Icons.fireplace, text: "10min"),
+                  RecipeIcon(icon: LineIcons.hourglass, text: "20min"),
+                  RecipeIcon(icon: LineIcons.rocket, text: "easy"),
+                  RecipeIcon(icon: LineIcons.cut, text: "10min"),
+                  RecipeIcon(icon: LineIcons.fire, text: "10min"),
+                  RecipeIcon(icon: LineIcons.leaf, text: "Veggie"),
                 ],
               ),
             ),

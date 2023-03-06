@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RecipeIcon extends StatelessWidget {
-  IconData icon;
+  IconData? icon;
   String text;
 
   RecipeIcon({super.key, required this.icon, required this.text});

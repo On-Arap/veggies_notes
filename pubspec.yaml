@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_maps_flutter: ^2.2.4
+  line_icons: ^2.0.1
 
 dev_dependencies:
   flutter_test:
