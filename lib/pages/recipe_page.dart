@@ -38,20 +38,6 @@ class RecipePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: 300,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                image: DecorationImage(
-                  colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.2),
-                    BlendMode.multiply,
-                  ),
-                  image: NetworkImage(imageUrl),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 14.0),
               child: Wrap(
@@ -64,6 +50,20 @@ class RecipePage extends StatelessWidget {
                   RecipeIcon(icon: LineIcons.fire, text: "10min"),
                   RecipeIcon(icon: LineIcons.leaf, text: "Veggie"),
                 ],
+              ),
+            ),
+            Container(
+              height: 300,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                image: DecorationImage(
+                  colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.2),
+                    BlendMode.multiply,
+                  ),
+                  image: NetworkImage(imageUrl),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             const Padding(
