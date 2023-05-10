@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
 class CardRecipe extends StatelessWidget {
-  String title;
-  String imageUrl;
-  String timer;
-  String difficulty;
+  final String title;
+  final String imageUrl;
+  final String timer;
+  final String difficulty;
 
-  CardRecipe({super.key, required this.title, required this.imageUrl, required this.timer, required this.difficulty});
+  const CardRecipe({super.key, required this.title, required this.imageUrl, required this.timer, required this.difficulty});
 
   Color getColorDifficulty() {
     Color color = Colors.white;

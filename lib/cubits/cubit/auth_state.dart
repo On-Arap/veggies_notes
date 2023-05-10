@@ -2,7 +2,7 @@ part of 'auth_cubit.dart';
 
 enum AuthStatus { initial, loading, success, failure }
 
-class AuthState {
+class AuthState extends Equatable {
   final AuthStatus status;
   final List<String> goals;
   final Exception? exception;

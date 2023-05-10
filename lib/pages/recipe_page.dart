@@ -45,8 +45,8 @@ class RecipePage extends StatelessWidget {
                 thickness: 2,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 14.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 14.0),
               child: Wrap(
                 spacing: 0.0, // gap between adjacent chips
                 runSpacing: 10.0, // gap between lines

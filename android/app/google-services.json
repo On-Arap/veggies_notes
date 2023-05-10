@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "916415988125",
+    "project_id": "veggiesnotes",
+    "storage_bucket": "veggiesnotes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916415988125:android:73751a7a5f6bc2f1e5af74",
+        "android_client_info": {
+          "package_name": "com.example.veggies_notes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916415988125-snj56dmtdtpj675gfgvfe4oojivcbsvg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgbLXkFPYP3-igzuShVBZHsbcC2mGzRO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916415988125-snj56dmtdtpj675gfgvfe4oojivcbsvg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
