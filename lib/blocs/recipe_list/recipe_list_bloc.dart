@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -6,11 +8,16 @@ part 'recipe_list_state.dart';
 
 class RecipeListBloc extends Bloc<RecipeListEvent, RecipeListState> {
   RecipeListBloc() : super(RecipeListLoading()) {
-    on<LoadRecipes>((event, emit) {
-      emit(const RecipeListLoaded(recipes: ["", ""]));
-    });
-    on<UpdateRecipes>((event, emit) {
-      emit(const RecipeListLoaded(recipes: ["Test", "Test"]));
-    });
+    on<LoadRecipes>(_mapLoadRecipes);
+    on<UpdateRecipes>(_mapUpdateRecipes);
+  }
+
+  void _mapLoadRecipes(event, emit) {
+    sleep(Duration(seconds: 3));
+    emit(const RecipeListLoaded(recipes: ["", ""]));
+  }
+
+  void _mapUpdateRecipes(event, emit) {
+    emit(const RecipeListLoaded(recipes: ["Test", "Test"]));
   }
 }
