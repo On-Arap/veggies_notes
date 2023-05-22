@@ -13,7 +13,7 @@ class RecipeListBloc extends Bloc<RecipeListEvent, RecipeListState> {
   }
 
   void _mapLoadRecipes(event, emit) {
-    sleep(Duration(seconds: 3));
+    sleep(const Duration(seconds: 3));
     emit(const RecipeListLoaded(recipes: ["", ""]));
   }
 

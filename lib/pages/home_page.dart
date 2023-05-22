@@ -19,10 +19,18 @@ class _HomePageState extends State<HomePage> {
       child: BlocBuilder<RecipeListBloc, RecipeListState>(
         builder: (context, state) {
           if (state is RecipeListLoading) {
-            return const Center(
-              child: CircularProgressIndicator(),
+            print("RecipeListLoading state");
+            return const SingleChildScrollView(
+              child: Center(
+                child: Column(
+                  children: [
+                    Text("Loading"),
+                  ],
+                ),
+              ),
             );
           } else if (state is RecipeListLoaded) {
+            print("RecipeListLoaded state");
             return const SingleChildScrollView(
               child: Column(
                 children: [
@@ -60,6 +68,7 @@ class _HomePageState extends State<HomePage> {
               ),
             );
           } else {
+            print("else state");
             return const Center(
               child: CircularProgressIndicator(),
             );
