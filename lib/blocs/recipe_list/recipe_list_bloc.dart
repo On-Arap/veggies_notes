@@ -2,19 +2,26 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:veggies_notes/repository/recipe_repository.dart';
 
 part 'recipe_list_event.dart';
 part 'recipe_list_state.dart';
 
 class RecipeListBloc extends Bloc<RecipeListEvent, RecipeListState> {
-  RecipeListBloc() : super(RecipeListLoading()) {
+  final RecipeRepository recipeRepository;
+  
+  RecipeListBloc({required this.recipeRepository}) : super(RecipeListLoading()) {
     on<LoadRecipes>(_mapLoadRecipes);
     on<UpdateRecipes>(_mapUpdateRecipes);
   }
 
-  void _mapLoadRecipes(event, emit) {
-    sleep(const Duration(seconds: 3));
+  void _mapLoadRecipes(event, emit) async {
+    try {
+    final recipes = await recipeRepository.getRecipes(); 
     emit(const RecipeListLoaded(recipes: ["", ""]));
+    } catch (e) {
+    emit(const RecipeListLoaded(recipes: ["", ""]));
+    }
   }
 
   void _mapUpdateRecipes(event, emit) {

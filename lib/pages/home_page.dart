@@ -20,14 +20,8 @@ class _HomePageState extends State<HomePage> {
         builder: (context, state) {
           if (state is RecipeListLoading) {
             print("RecipeListLoading state");
-            return const SingleChildScrollView(
-              child: Center(
-                child: Column(
-                  children: [
-                    Text("Loading"),
-                  ],
-                ),
-              ),
+            return const Center(
+                child: CircularProgressIndicator()
             );
           } else if (state is RecipeListLoaded) {
             print("RecipeListLoaded state");
@@ -36,7 +30,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   CardRecipe(
                     title: "Tartiflette vegetarienne",
-                    imageUrl: "https://i0.wp.com/freethepickle.fr/wp-content/uploads/2021/09/Tartiflettes-lardons-de-champignons-2-of-6.jpg",
+                    imageUrl: "https://i0.wp.com/freethepickle.fr/wp-content/uploads/2021/09/Tartiflettes-lardons-de-champignons-4-of-6.jpg?fit=800%2C1000&ssl=1",
                     timer: "20min",
                     difficulty: "easy",
                   ),
