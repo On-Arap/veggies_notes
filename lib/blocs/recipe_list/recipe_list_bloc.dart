@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:veggies_notes/repository/recipe_repository.dart';
@@ -17,10 +15,10 @@ class RecipeListBloc extends Bloc<RecipeListEvent, RecipeListState> {
 
   void _mapLoadRecipes(event, emit) async {
     try {
-    final recipes = await recipeRepository.getRecipes(); 
-    emit(const RecipeListLoaded(recipes: ["", ""]));
+      final recipes = await recipeRepository.getRecipes();
+      emit(RecipeListLoaded(recipes: recipes));
     } catch (e) {
-    emit(const RecipeListLoaded(recipes: ["", ""]));
+      emit(const RecipeListLoaded(recipes: ["", ""]));
     }
   }
 

@@ -23,12 +23,13 @@ class RecipeRepository {
 
     Future<List<dynamic>> getRecipes() async {
 
-    List<dynamic> recipes = ["", ""];
+    List<dynamic> recipes = [];
     try {
       final recipesDocs = await _firebaseDatabase.get();
-      recipesDocs.docs.forEach((recipe) {
-        return recipes.add(recipe.data());
-      });
+      for (var i = 0; i < recipesDocs.docs.length; i++) {
+        print(recipesDocs.docs[i].data());
+        recipes.add(recipesDocs.docs[i].data());
+      }
 
       return recipes;
     } on FirebaseException catch (e) {
