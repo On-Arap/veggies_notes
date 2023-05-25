@@ -40,12 +40,6 @@ class _HomePageState extends State<HomePage> {
                       );
                     }
                   ),
-                  const CardRecipe(
-                    title: "Pantry Pasta with Vegan Cream Sauce",
-                    imageUrl: "https://assets.bonappetit.com/photos/5e4c58a6cf2f580008eba058/1:1/w_1920%2Cc_limit/HLY_Vegan%2520Alfredo_16x9.jpg",
-                    timer: "35min",
-                    difficulty: "medium",
-                  ),
                 ],
               ),
             );
