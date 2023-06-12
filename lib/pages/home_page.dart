@@ -19,32 +19,27 @@ class _HomePageState extends State<HomePage> {
       child: BlocBuilder<RecipeListBloc, RecipeListState>(
         builder: (context, state) {
           if (state is RecipeListLoading) {
-            return const Center(
-                child: CircularProgressIndicator()
-            );
+            return const Center(child: CircularProgressIndicator());
           } else if (state is RecipeListLoaded) {
             return SingleChildScrollView(
               child: Column(
                 children: [
                   ListView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: state.recipes.length,
-                    itemBuilder: (context, index) {
-                      print(state.recipes[index]);
-                      return CardRecipe(
-                        title: state.recipes[index]['title'],
-                        imageUrl: state.recipes[index]['imageUrl'],
-                        timer: state.recipes[index]['timer'],
-                        difficulty: state.recipes[index]['difficulty'],
-                      );
-                    }
-                  ),
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: state.recipes.length,
+                      itemBuilder: (context, index) {
+                        return CardRecipe(
+                          title: state.recipes[index]['title'],
+                          imageUrl: state.recipes[index]['imageUrl'],
+                          timer: state.recipes[index]['timer'],
+                          difficulty: state.recipes[index]['difficulty'],
+                        );
+                      }),
                 ],
               ),
             );
           } else {
-            print("else state");
             return const Center(
               child: CircularProgressIndicator(),
             );
