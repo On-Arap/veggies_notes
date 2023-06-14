@@ -20,9 +20,8 @@ class _ProfilPageState extends State<ProfilPage> {
           const Text("You're not connected"),
           const SizedBox(height: 10.0),
           MaterialButton(color: Theme.of(context).colorScheme.onSecondary, child: const Text("Sign In"), onPressed: () {}),
-MaterialButton(color: Theme.of(context).colorScheme.onSecondary, child: const Text("Sign In"), onPressed: () {}),
-
-          MaterialButton(color: Theme.of(context).colorScheme.onSecondary, child: const Text("Sign In"), onPressed: () {}),
+          const SizedBox(height: 10.0),
+          MaterialButton(color: Theme.of(context).colorScheme.onSecondary, child: const Text("Register"), onPressed: () {}),
         ],
       ),
     );

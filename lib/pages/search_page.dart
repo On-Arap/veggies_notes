@@ -14,7 +14,12 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text("Search Page"),
+      child: Column(
+        children: [
+          Text("Search Page"),
+          TextField(),
+        ],
+      ),
     );
   }
 }
