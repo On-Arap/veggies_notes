@@ -17,7 +17,12 @@ class _SearchPageState extends State<SearchPage> {
       child: Column(
         children: [
           Text("Search Page"),
-          TextField(),
+          TextField(
+            decoration: InputDecoration(
+              suffixIcon: Icon(Icons.search),
+              hintText: "Search",
+            ),
+          ),
         ],
       ),
     );
