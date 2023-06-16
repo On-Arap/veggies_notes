@@ -4,7 +4,9 @@ import '../constant/destinations.dart';
 class SearchPage extends StatefulWidget {
   final Destination destination;
 
-  const SearchPage({super.key, required this.destination});
+  final textController = TextEditingController();
+
+  SearchPage({super.key, required this.destination});
 
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -13,12 +15,13 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Column(
         children: [
-          Text("Search Page"),
+          const Text("Search Page"),
           TextField(
-            decoration: InputDecoration(
+            controller: widget.textController,
+            decoration: const InputDecoration(
               suffixIcon: Icon(Icons.search),
               hintText: "Search",
             ),
