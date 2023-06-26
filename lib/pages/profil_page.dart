@@ -21,6 +21,11 @@ class _ProfilPageState extends State<ProfilPage> {
           const SizedBox(height: 10.0),
           MaterialButton(color: Theme.of(context).colorScheme.onSecondary, child: const Text("Sign In"), onPressed: () {}),
           const SizedBox(height: 10.0),
+          const Divider(
+            height: 10.0,
+            thickness: 2,
+          ),
+          const SizedBox(height: 10.0),
           MaterialButton(color: Theme.of(context).colorScheme.onSecondary, child: const Text("Register"), onPressed: () {}),
         ],
       ),
