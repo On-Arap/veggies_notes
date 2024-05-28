@@ -5,27 +5,28 @@ import 'package:veggies_notes/repository/recipe_repository.dart';
 import 'blocs/recipe_list/recipe_list_bloc.dart';
 import "constant/color_scheme.dart";
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MainApp());
 }
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
-
-
   @override
   Widget build(BuildContext context) {
     return RepositoryProvider(
-          create: (BuildContext context) => RecipeRepository(),
-          child: MultiBlocProvider(
+      create: (BuildContext context) => RecipeRepository(),
+      child: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => RecipeListBloc(recipeRepository: RepositoryProvider.of<RecipeRepository>(context)
-            )..add(LoadRecipes()),
+            create: (context) => RecipeListBloc(recipeRepository: RepositoryProvider.of<RecipeRepository>(context))..add(LoadRecipes()),
           )
         ],
         child: MaterialApp(
