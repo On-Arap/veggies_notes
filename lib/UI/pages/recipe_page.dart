@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:veggies_notes/UI/widgets/recipe_icon.dart';
+import 'package:veggies_notes/data/cubit/gemini_recipe_cubit.dart';
 import '../../config/routing/destinations.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -74,9 +77,29 @@ class RecipePage extends StatelessWidget {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              child: Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+              padding: EdgeInsets.symmetric(horizontal: 40.0),
+              child: Divider(
+                height: 10.0,
+                thickness: 2,
+              ),
+            ),
+            BlocBuilder<GeminiRecipeCubit, List<String>>(
+              builder: (context, state) {
+                if (state.isNotEmpty) {
+                  return ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: state.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return ListTile(
+                          tileColor: index.isEven ? const Color(0xFF191C1B) : const Color(0xFF252928),
+                          title: Text(state[index]),
+                        );
+                      });
+                } else {
+                  return const Text("Bon chance");
+                }
+              },
             ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 40.0),

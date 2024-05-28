@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:veggies_notes/data/cubit/gemini_recipe_cubit.dart';
 
 class CardRecipe extends StatelessWidget {
   final String title;
@@ -31,6 +33,7 @@ class CardRecipe extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        context.read<GeminiRecipeCubit>().generateRecipe(title);
         Navigator.pushNamed(context, '/recipe', arguments: {'title': title, 'imageUrl': imageUrl});
       },
       child: Container(
