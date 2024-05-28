@@ -1,14 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:veggies_notes/home.dart';
-import 'package:veggies_notes/repository/recipe_repository.dart';
-import 'blocs/recipe_list/recipe_list_bloc.dart';
-import "constant/color_scheme.dart";
+import 'package:veggies_notes/root_page.dart';
+import 'package:veggies_notes/domain/repository/recipe_repository.dart';
+import 'data/blocs/recipe_list/recipe_list_bloc.dart';
+import "config/color_scheme.dart";
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'firebase_options.dart';
+import 'domain/firebase_options.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -35,7 +34,7 @@ class MainApp extends StatelessWidget {
             useMaterial3: true,
             colorScheme: darkColorScheme,
           ),
-          home: const HomePage(),
+          home: const RootPage(),
         ),
       ),
     );

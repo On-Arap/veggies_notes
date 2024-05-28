@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:veggies_notes/component/recipe_icon.dart';
-import '../constant/destinations.dart';
+import 'package:veggies_notes/UI/widgets/recipe_icon.dart';
+import '../../config/routing/destinations.dart';
 import 'package:line_icons/line_icons.dart';
 
 class RecipeData {

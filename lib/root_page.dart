@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
+import 'config/routing/destination_view.dart';
+import 'config/routing/destinations.dart';
 
-import 'constant/destinations.dart';
-import 'views/destination_view.dart';
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class RootPage extends StatefulWidget {
+  const RootPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<RootPage> createState() => _RootPageState();
 }
 
-class _HomePageState extends State<HomePage> with TickerProviderStateMixin<HomePage> {
+class _RootPageState extends State<RootPage> with TickerProviderStateMixin<RootPage> {
   static const List<Destination> allDestinations = <Destination>[
     Destination(0, 'Home', Icons.home),
     Destination(1, 'Search', Icons.search),
@@ -61,14 +60,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin<HomeP
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      onPopInvoked: (bool didPop) {
         final NavigatorState navigator = navigatorKeys[selectedIndex].currentState!;
-        if (!navigator.canPop()) {
-          return true;
+        if (navigator.canPop()) {
+          navigator.pop();
         }
-        navigator.pop();
-        return false;
       },
       child: Scaffold(
         body: SafeArea(

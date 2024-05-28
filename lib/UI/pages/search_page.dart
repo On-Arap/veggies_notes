@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constant/destinations.dart';
+import '../../config/routing/destinations.dart';
 
 class SearchPage extends StatefulWidget {
   final Destination destination;

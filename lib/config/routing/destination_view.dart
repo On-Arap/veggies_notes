@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:veggies_notes/constant/destinations.dart';
-import 'package:veggies_notes/pages/recipe_page.dart';
-import '../pages/explore_page.dart';
-import '../pages/home_page.dart';
-import '../pages/map_page.dart';
-import '../pages/profil_page.dart';
-import '../pages/search_page.dart';
-import '../pages/text_page.dart';
+import 'package:veggies_notes/config/routing/destinations.dart';
+import 'package:veggies_notes/UI/pages/recipe_page.dart';
+import '../../UI/pages/explore_page.dart';
+import '../../UI/pages/home_page.dart';
+import '../../UI/pages/map_page.dart';
+import '../../UI/pages/profil_page.dart';
+import '../../UI/pages/search_page.dart';
+import '../../UI/pages/text_page.dart';
 
 class DestinationView extends StatefulWidget {
   const DestinationView({

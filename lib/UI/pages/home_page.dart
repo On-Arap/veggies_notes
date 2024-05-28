@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../blocs/recipe_list/recipe_list_bloc.dart';
-import '../component/card_recipe.dart';
-import '../constant/destinations.dart';
+import '../../data/blocs/recipe_list/recipe_list_bloc.dart';
+import '../widgets/card_recipe.dart';
+import '../../config/routing/destinations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatefulWidget {
