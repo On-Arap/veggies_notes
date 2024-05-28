@@ -13,12 +13,23 @@ class RecipeData {
   RecipeData({required this.title, required this.imageUrl});
 }
 
-class RecipePage extends StatelessWidget {
+class RecipePage extends StatefulWidget {
   final Destination destination;
   final String title;
   final String imageUrl;
 
   const RecipePage({super.key, required this.destination, required this.title, required this.imageUrl});
+
+  @override
+  State<RecipePage> createState() => _RecipePageState();
+}
+
+class _RecipePageState extends State<RecipePage> {
+  @override
+  void dispose() {
+    context.read<GeminiRecipeCubit>().generateRecipe('');
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +40,7 @@ class RecipePage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(
-              title,
+              widget.title,
               style: const TextStyle(
                 fontWeight: FontWeight.w400,
               ),
@@ -71,7 +82,7 @@ class RecipePage extends StatelessWidget {
                     Colors.black.withOpacity(0.2),
                     BlendMode.multiply,
                   ),
-                  image: NetworkImage(imageUrl),
+                  image: NetworkImage(widget.imageUrl),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -97,7 +108,7 @@ class RecipePage extends StatelessWidget {
                         );
                       });
                 } else {
-                  return const Text("Bon chance");
+                  return const CircularProgressIndicator();
                 }
               },
             ),
