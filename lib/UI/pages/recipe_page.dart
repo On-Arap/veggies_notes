@@ -9,16 +9,20 @@ import 'package:line_icons/line_icons.dart';
 class RecipeData {
   String title;
   String imageUrl;
+  String timer;
+  String difficulty;
 
-  RecipeData({required this.title, required this.imageUrl});
+  RecipeData({required this.title, required this.imageUrl, required this.timer, required this.difficulty});
 }
 
 class RecipePage extends StatefulWidget {
   final Destination destination;
   final String title;
   final String imageUrl;
+  final String timer;
+  final String difficulty;
 
-  const RecipePage({super.key, required this.destination, required this.title, required this.imageUrl});
+  const RecipePage({super.key, required this.destination, required this.title, required this.imageUrl, required this.timer, required this.difficulty});
 
   @override
   State<RecipePage> createState() => _RecipePageState();
@@ -59,14 +63,14 @@ class _RecipePageState extends State<RecipePage> {
                 thickness: 2,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 14.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 14.0),
               child: Wrap(
                 spacing: 0.0, // gap between adjacent chips
                 runSpacing: 10.0, // gap between lines
                 children: [
-                  RecipeIcon(icon: LineIcons.hourglass, text: "20min"),
-                  RecipeIcon(icon: LineIcons.rocket, text: "easy"),
+                  RecipeIcon(icon: LineIcons.hourglass, text: widget.timer),
+                  RecipeIcon(icon: LineIcons.rocket, text: widget.difficulty),
                   RecipeIcon(icon: LineIcons.cut, text: "10min"),
                   RecipeIcon(icon: LineIcons.fire, text: "10min"),
                   RecipeIcon(icon: LineIcons.leaf, text: "Veggie"),

@@ -56,6 +56,8 @@ class _DestinationViewState extends State<DestinationView> {
                     destination: widget.destination,
                     title: data['title'],
                     imageUrl: data['imageUrl'],
+                    timer: data['timer'],
+                    difficulty: data['difficulty'],
                   );
                 }
               case '/text':

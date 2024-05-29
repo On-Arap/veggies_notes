@@ -34,7 +34,7 @@ class CardRecipe extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         context.read<GeminiRecipeCubit>().generateRecipe(title);
-        Navigator.pushNamed(context, '/recipe', arguments: {'title': title, 'imageUrl': imageUrl});
+        Navigator.pushNamed(context, '/recipe', arguments: {'title': title, 'imageUrl': imageUrl, 'timer': timer, 'difficulty': difficulty});
       },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
