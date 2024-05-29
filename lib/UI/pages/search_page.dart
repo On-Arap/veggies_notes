@@ -15,18 +15,20 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          const Text("Search Page"),
-          TextField(
-            controller: widget.textController,
-            decoration: const InputDecoration(
-              suffixIcon: Icon(Icons.search),
-              hintText: "Search",
+    return SafeArea(
+      child: Center(
+        child: Column(
+          children: [
+            const Text("Search Page"),
+            TextField(
+              controller: widget.textController,
+              decoration: const InputDecoration(
+                suffixIcon: Icon(Icons.search),
+                hintText: "Search",
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
