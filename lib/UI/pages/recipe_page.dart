@@ -91,38 +91,42 @@ class _RecipePageState extends State<RecipePage> {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.0),
-              child: Divider(
-                height: 10.0,
-                thickness: 2,
-              ),
-            ),
             BlocBuilder<GeminiRecipeCubit, List<String>>(
               builder: (context, state) {
                 if (state.isNotEmpty) {
-                  return ListView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: state.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return ListTile(
-                          tileColor: index.isEven ? const Color(0xFF191C1B) : const Color(0xFF252928),
-                          title: Text(state[index]),
-                        );
-                      });
+                  return Column(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 40.0),
+                        child: Divider(
+                          height: 10.0,
+                          thickness: 2,
+                        ),
+                      ),
+                      ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: state.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return ListTile(
+                              tileColor: index.isEven ? const Color(0xFF191C1B) : const Color(0xFF252928),
+                              title: Text(state[index]),
+                            );
+                          }),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 40.0),
+                        child: Divider(
+                          height: 10.0,
+                          thickness: 2,
+                        ),
+                      ),
+                    ],
+                  );
                 } else {
-                  return const CircularProgressIndicator();
+                  return const LinearProgressIndicator();
                 }
               },
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.0),
-              child: Divider(
-                height: 10.0,
-                thickness: 2,
-              ),
-            )
           ],
         ),
       ),

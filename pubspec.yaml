@@ -14,6 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
+  flutter_native_splash: ^2.4.0
   google_generative_ai: ^0.2.0
   google_maps_flutter: ^2.2.4
   line_icons: ^2.0.1
@@ -25,4 +26,16 @@ dev_dependencies:
   flutter_lints: ^4.0.0
 
 flutter:
+  assets:
+    - assets/splash.jpg
   uses-material-design: true
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+  image: assets/splash.jpg
+  color: "#006B59"
+  android_12:
+    image: assets/splash.jpg
+    color: "#006B59"
