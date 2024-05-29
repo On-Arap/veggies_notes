@@ -26,15 +26,15 @@ class RecipePage extends StatefulWidget {
 
 class _RecipePageState extends State<RecipePage> {
   @override
-  void dispose() {
-    context.read<GeminiRecipeCubit>().generateRecipe('');
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: BackButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+            context.read<GeminiRecipeCubit>().generateRecipe('');
+          },
+        ),
         title: FittedBox(
           fit: BoxFit.fitWidth,
           child: Padding(

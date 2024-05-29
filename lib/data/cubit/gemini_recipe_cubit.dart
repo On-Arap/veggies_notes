@@ -11,17 +11,15 @@ class GeminiRecipeCubit extends Cubit<List<String>> {
   GeminiRecipeCubit() : super(([]));
 
   Future<void> generateRecipe(String title) async {
-    // TODO : wait for France to be listed as country beeing able to use GEMINI
-    final response = await _model.generateContent([
-      Content.text("What's the most famous dish in France ?"),
-    ]);
-
-    print(response);
     if (title.isEmpty) {
       emit([]);
+    } else {
+      final response = await _model.generateContent([
+        Content.text("Can you write me a recipe for a $title, only give me the ingredients, and the instructions"),
+      ]);
+      print(response.text);
+      //generate Gemini Recipe
+      emit([response.text!]);
     }
-
-    //generate Gemini Recipe
-    emit(["Bon Ap"]);
   }
 }
