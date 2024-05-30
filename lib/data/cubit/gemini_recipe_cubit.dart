@@ -6,7 +6,7 @@ import 'package:meta/meta.dart';
 import 'package:veggies_notes/utils/secrets.dart';
 
 class GeminiRecipeCubit extends Cubit<String> {
-  final _model = GenerativeModel(model: "gemini-1.5-flash", apiKey: geminiApiKey);
+  final _model = GenerativeModel(model: "gemini-1.5-flash", apiKey: GEMINI_API_KEY);
 
   GeminiRecipeCubit() : super((''));
 
