@@ -56,6 +56,10 @@ class _MapPageState extends State<MapPage> {
             markerId: MarkerId(rest.name),
             position: LatLng(rest.geometry!.location.lat, rest.geometry!.location.lng),
             icon: await bitmapDescriptorFromSvgAsset('assets/map/restaurant_pin.svg'),
+            infoWindow: InfoWindow(
+              title: rest.name,
+              snippet: "${rest.rating}/5",
+            ),
           ),
         );
         setState(() {});
