@@ -91,7 +91,7 @@ class _RecipePageState extends State<RecipePage> {
                 ),
               ),
             ),
-            BlocBuilder<GeminiRecipeCubit, List<String>>(
+            BlocBuilder<GeminiRecipeCubit, String>(
               builder: (context, state) {
                 if (state.isNotEmpty) {
                   return Column(
@@ -103,16 +103,7 @@ class _RecipePageState extends State<RecipePage> {
                           thickness: 2,
                         ),
                       ),
-                      ListView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          itemCount: state.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return ListTile(
-                              tileColor: index.isEven ? const Color(0xFF191C1B) : const Color(0xFF252928),
-                              title: Text(state[index]),
-                            );
-                          }),
+                      Text(state),
                       const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 40.0),
                         child: Divider(

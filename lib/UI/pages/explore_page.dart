@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:veggies_notes/domain/repository/recipe_repository.dart';
 import '../../config/routing/destinations.dart';
 
 class ExplorePage extends StatefulWidget {
@@ -22,7 +24,7 @@ class _ExplorePageState extends State<ExplorePage> {
             height: 20.0,
           ),
           MaterialButton(
-            onPressed: () {
+            onPressed: () async {
               Navigator.pushNamed(context, '/text');
             },
             color: Colors.grey,

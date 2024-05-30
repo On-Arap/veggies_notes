@@ -3,23 +3,22 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:meta/meta.dart';
-import 'package:veggies_notes/domain/gemini/gemini_client.dart';
 import 'package:veggies_notes/utils/secrets.dart';
 
-class GeminiRecipeCubit extends Cubit<List<String>> {
+class GeminiRecipeCubit extends Cubit<String> {
   final _model = GenerativeModel(model: "gemini-1.5-flash", apiKey: geminiApiKey);
 
-  GeminiRecipeCubit() : super(([]));
+  GeminiRecipeCubit() : super((''));
 
   Future<void> generateRecipe(String title) async {
     if (title.isEmpty) {
-      emit([]);
+      emit('');
     } else {
       final response = await _model.generateContent([
         Content.text("Can you write me a recipe for a $title, only give me the ingredients, and the instructions"),
       ]);
       //generate Gemini Recipe
-      emit([response.text!]);
+      emit(response.text!);
     }
   }
 }
